@@ -1,3 +1,130 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  color-scheme: light dark;
+
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    fill 0.4s ease,
+    stroke 0.4s ease,
+    box-shadow 0.4s ease,
+    backdrop-filter 0.4s ease,
+    opacity 0.4s ease;
+}
+
+* {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+
+:root {
+  /* === Backgrounds === */
+  --dm-bg: #ffffff;
+  --dm-bg-secondary: #f7f7f8;   /* sidebar / cards */
+  --dm-bg-tertiary: #f2f3f5;    /* subtle panels */
+  --dm-bg-hover: #ececec;
+
+  /* === Borders === */
+  --dm-border: #e4e4e7;         /* light border */
+  --dm-border-strong: #d4d4d8;  /* table borders */
+
+  /* === Text === */
+  --dm-text-primary: #0f0f11;   /* almost-black */
+  --dm-text-secondary: #52525b; /* gray-500 */
+  --dm-text-muted: #6b7280;     /* gray-600 */
+
+  /* === Accent (DevMate Blue) === */
+  --dm-accent: #2563eb;         /* blue-600 */
+  --dm-accent-light: #3b82f6;   /* blue-500 */
+  --dm-accent-bg: #eff6ff;      /* soft blue tint */
+  --dm-accent-border: #bfdbfe;  /* blue-200 */
+
+  /* === Cards / Surfaces === */
+  --dm-card: #ffffff;
+  --dm-card-gradient: linear-gradient(180deg, #ffffff, #f8f9fb);
+
+  /* === Shadows === */
+  --dm-shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.06);
+  --dm-shadow-md: 0px 4px 20px rgba(0, 0, 0, 0.08);
+
+  /* === Status Colors === */
+  --dm-success: #16a34a;   /* green-600 */
+  --dm-warning: #f59e0b;   /* amber-500 */
+  --dm-danger: #dc2626;    /* red-600 */
+
+  /* === Inputs === */
+  --dm-input-bg: #ffffff;
+  --dm-input-border: #7d7d7d;
+  --dm-input-ring: #2563eb;       /* blue focus ring */
+
+  /* === Navigation === */
+  --dm-nav-bg: #ffffff;
+  --dm-nav-border: #e5e7eb;
+  --dm-nav-shadow: rgba(0, 0, 0, 0.06);
+
+  /* === Profile / Button pills === */
+  --dm-pill-bg: rgba(37, 99, 235, 0.12);
+  --dm-pill-hover: rgba(37, 99, 235, 0.20);
+
+  --dm-btn-hover: #dde5fbe9;
+  
+}
+
+.dark {
+  /* === Backgrounds === */
+  --dm-bg: #0b0b0c;
+  --dm-bg-secondary: #111113;     /* sidebar / card surfaces */
+  --dm-bg-tertiary: #1a1a1c;
+  --dm-bg-hover: #262629;
+
+  /* === Borders === */
+  --dm-border: #2a2a2d;           /* subtle gray */
+  --dm-border-strong: #3d3d40;
+
+  /* === Text === */
+  --dm-text-primary: #ffffff;
+  --dm-text-secondary: #cfd0d4;
+  --dm-text-muted: #8d9097;
+
+  /* === Accent (DevMate Blue) === */
+  --dm-accent: #3b82f6;           /* blue-500 (glowy) */
+  --dm-accent-light: #60a5fa;
+  --dm-accent-bg: rgba(59, 130, 246, 0.12);
+  --dm-accent-border: rgba(59, 130, 246, 0.3);
+
+  /* === Cards / Surfaces === */
+  --dm-card: #121214;
+  --dm-card-gradient: linear-gradient(180deg, #141416, #0f0f11);
+
+  /* === Shadows === */
+  --dm-shadow-sm: 0px 1px 2px rgba(0, 0, 0, 0.4);
+  --dm-shadow-md: 0px 4px 20px rgba(0, 0, 0, 0.40);
+
+  /* === Status Colors === */
+  --dm-success: #22c55e;     /* green-500 */
+  --dm-warning: #eab308;     /* yellow-500 */
+  --dm-danger: #ef4444;      /* red-500 */
+
+  /* === Inputs === */
+  --dm-input-bg: #0f172a;
+  --dm-input-border: #1e3a8a;
+  --dm-input-ring: #38bdf8;   /* cyan-blue glow */
+
+  /* === Navigation === */
+  --dm-nav-bg: #0b0b0c;
+  --dm-nav-border: #1e1e20;
+  --dm-nav-shadow: rgba(59, 130, 246, 0.25); /* blue glow */
+
+  /* === Profile / Button pills === */
+  --dm-pill-bg: rgba(59, 130, 246, 0.18);
+  --dm-pill-hover: rgba(59, 130, 246, 0.28);
+  --dm-btn-hover: #0f235ec9;
+}

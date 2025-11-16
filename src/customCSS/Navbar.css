@@ -1,0 +1,14 @@
+@media (max-width: 400px) {
+    #profile-text {
+        display: none;
+    }
+    
+    #profile-container {
+        padding: 9px 9px;
+        border-radius: 100%;
+    }
+
+    #theme-profile {
+        gap: 13px;
+    }
+}
