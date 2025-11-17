@@ -4,11 +4,29 @@
     }
     
     #profile-container {
-        padding: 9px 9px;
-        border-radius: 100%;
+        padding: 8px 8px;
+
     }
 
     #theme-profile {
         gap: 13px;
     }
 }
+
+/* @media (min-width: 768px) and (max-width: 950px) {
+    #nav-search {
+        display: hidden;
+    }
+}
+
+@media (min-width: 648px) and (max-width: 768px) {
+    #nav-search {
+        display: inline;
+    }
+}
+
+@media (max-width: 648px) {
+    #nax-search {
+        display: hidden;
+    }
+} */

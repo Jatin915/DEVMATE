@@ -30,7 +30,6 @@ const Navbar = () => {
     return (
         <nav
         className="
-            fixed w-full right-0 z-50
             flex items-center justify-between
             px-4 lg:px-8 py-4
             border-b
@@ -38,7 +37,7 @@ const Navbar = () => {
         style={{
             background: "var(--dm-nav-bg)",
             borderColor: "var(--dm-nav-border)",
-            boxShadow: `0 4px 20px var(--dm-nav-shadow)`
+            boxShadow: `0 4px 10px var(--dm-nav-shadow)`
         }}
         >
 
@@ -46,7 +45,7 @@ const Navbar = () => {
         <div className="flex items-center gap-5">
                 <Sidebar color="var(--dm-text-primary)" className="cursor-pointer"/>  
             <h1
-            className="text-xl md:text-3xl font-semibold tracking-wide"
+            className="text-2xl sm:text-3xl font-semibold tracking-wide"
             style={{ color: "var(--dm-text-primary)" }}
             >
                 Dev
@@ -60,10 +59,10 @@ const Navbar = () => {
         </div>
 
         {/* MIDDLE — SEARCH */}
-        <div className="flex-1 hidden sm:inline max-w-md mx-6 relative">
+        <div id="nav-search" className="flex-1 hidden lg:inline max-w-md mx-6 relative" >
             <Search
             size={18}
-            className="absolute left-3 top-2.5 opacity-70"
+            className="absolute left-3 top-3 opacity-70"
             style={{ color: "var(--dm-accent-light)" }}
             />
 
