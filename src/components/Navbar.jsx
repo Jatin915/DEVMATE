@@ -2,7 +2,7 @@ import { Sun, Moon, User, Search, Sidebar } from "lucide-react";
 import "../customCSS/Navbar.css";
 import { useState , useEffect } from "react";
 
-const Navbar = () => {
+const Navbar = ({ isSidebarOpen, setIsSidebarOpen, isMobileSidebarOpen, setIsMobileSidebarOpen, isMobile }) => {
     
     const [darkMode, setDarkMode] = useState(() => {
         // 1. Check localStorage preference first
@@ -35,6 +35,7 @@ const Navbar = () => {
             border-b
         "
         style={{
+            marginLeft: !isMobile ? isSidebarOpen ? "16rem" : "6.5rem" : "0",
             background: "var(--dm-nav-bg)",
             borderColor: "var(--dm-nav-border)",
             boxShadow: `0 4px 10px var(--dm-nav-shadow)`
@@ -43,17 +44,23 @@ const Navbar = () => {
 
         {/* LOGO + Sidebar Toggle Button */}
         <div className="flex items-center gap-5">
-                <Sidebar color="var(--dm-text-primary)" className="cursor-pointer"/>  
+                <Sidebar onClick={() => {
+                    if (isMobile) {
+                        setIsMobileSidebarOpen(!isMobileSidebarOpen);
+                    } else {
+                        setIsSidebarOpen(!isSidebarOpen);
+                    }
+                }} color="var(--dm-text-primary)" className="cursor-pointer"/>  
             <h1
             className="text-2xl sm:text-3xl font-semibold tracking-wide"
             style={{ color: "var(--dm-text-primary)" }}
             >
-                Dev
+            Hi, <span> </span>
             <span
                 className="font-bold"
                 style={{ color: "var(--dm-accent)" }}
             >
-                Mate
+                Jatin
             </span>
             </h1>
         </div>
@@ -79,7 +86,7 @@ const Navbar = () => {
                 color: "var(--dm-text-primary)"
             }}
             onFocus={(e) =>
-                (e.target.style.boxShadow = `0 0 0 1px var(--dm-input-ring)`)
+                (e.target.style.boxShadow = '0 0 0 1px var(--dm-input-ring)')
             }
             onBlur={(e) => (e.target.style.boxShadow = "none")}
             />
