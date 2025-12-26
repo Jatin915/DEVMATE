@@ -1,4 +1,6 @@
-// src/components/Sidebar.jsx
+import React from "react";
+import "../customCSS/Sidebar.css";
+
 import { NavLink } from "react-router-dom";
 import {
   Home,
@@ -48,8 +50,10 @@ const Sidebar = ({
                 <>
                   Dev<span style={{ color: "var(--dm-accent)" }}>Mate</span>
                 </>
-              ) : (
-                <span style={{ color: "var(--dm-accent)" }}>D</span>
+              ) : (<>
+                <span>D</span>
+                <span style={{ color: "var(--dm-accent)" }}>M</span>
+                </> 
               )}
             </h1>
 
@@ -57,12 +61,14 @@ const Sidebar = ({
             {((isMobile || isSidebarOpen) && (
             <div className="w-full mb-6 relative">
               <Search
+                id="sidebar-search"
                 size={18}
                 className="absolute left-3 top-3 opacity-70"
                 style={{ color: "var(--dm-accent-light)" }}
               />
 
               <input
+                id="sidebar-search"
                 type="text"
                 placeholder="Search..."
                 className="
@@ -84,7 +90,7 @@ const Sidebar = ({
             ))}
 
             {/* NAV LINKS */}
-            <nav className="space-y-3">
+            <nav className="space-y-5">
               {links.map((link) => (
                 <NavLink
                   key={link.name}
@@ -184,6 +190,11 @@ const Sidebar = ({
                 border: "1px solid var(--dm-input-border)",
                 color: "var(--dm-text-primary)",
               }}
+
+              onFocus={(e) =>
+                (e.target.style.boxShadow = '0 0 0 1px var(--dm-input-ring)')
+                }
+                onBlur={(e) => (e.target.style.boxShadow = "none")}
             />
           </div>
 
