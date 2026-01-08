@@ -38,7 +38,8 @@ const Navbar = ({ isSidebarOpen, setIsSidebarOpen, isMobileSidebarOpen, setIsMob
             marginLeft: !isMobile ? isSidebarOpen ? "16rem" : "6.5rem" : "0",
             background: "var(--dm-nav-bg)",
             borderColor: "var(--dm-nav-border)",
-            boxShadow: `0 4px 10px var(--dm-nav-shadow)`
+            boxShadow: `0 4px 10px var(--dm-nav-shadow)`,
+            transition: "margin-left 0.5s ease-in-out, background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease"
         }}
         >
 
