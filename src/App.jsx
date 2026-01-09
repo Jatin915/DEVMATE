@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
+import Dashboard from "../pages/Dashboard.jsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -20,7 +21,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex w-screen">
+    <div className="flex w-screen h-screen overflow-hidden">
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
@@ -29,15 +30,18 @@ function App() {
         isMobile={isMobile}
       />
 
-      <div className="flex-1 flex-col">
-        <Navbar
+      <div className="flex flex-1 flex-col overflow-x-hidden">
+        <Navbar className="shrink-0"
           isSidebarOpen={isSidebarOpen}
           setIsSidebarOpen={setIsSidebarOpen}
           isMobileSidebarOpen={isMobileSidebarOpen}
           setIsMobileSidebarOpen={setIsMobileSidebarOpen}
           isMobile={isMobile}
         />
-        <main />
+
+        <main className="flex-1 h-full overflow-y-auto">
+          <Dashboard isSidebarOpen={isSidebarOpen} isMobile={isMobile} />
+        </main>
       </div>
     </div>
   );
