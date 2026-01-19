@@ -1,21 +1,104 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@theme inline {
+  /* Backgrounds */
+  --color-dm-bg: var(--dm-bg);
+  --color-dm-bg-secondary: var(--dm-bg-secondary);
+  --color-dm-bg-tertiary: var(--dm-bg-tertiary);
+  --color-dm-bg-hover: var(--dm-bg-hover);
+
+  /* Borders */
+  --color-dm-border: var(--dm-border);
+  --color-dm-border-strong: var(--dm-border-strong);
+  --color-dm-input-border: var(--dm-input-border);
+  --color-dm-input-ring: var(--dm-input-ring);
+  --color-dm-accent-border: var(--dm-accent-border);
+
+  /* Text */
+  --color-dm-text-primary: var(--dm-text-primary);
+  --color-dm-text-secondary: var(--dm-text-secondary);
+  --color-dm-text-muted: var(--dm-text-muted);
+
+  /* Accent */
+  --color-dm-accent: var(--dm-accent);
+  --color-dm-accent-light: var(--dm-accent-light);
+  --color-dm-accent-bg: var(--dm-accent-bg);
+  --color-dm-accent-border: var(--dm-accent-border);
+
+  /* Cards */
+  --color-dm-card: var(--dm-card);
+
+  /* Status */
+  --color-dm-success: var(--dm-success);
+  --color-dm-warning: var(--dm-warning);
+  --color-dm-danger: var(--dm-danger);
+
+  /* Navigation */
+  --color-dm-nav-bg: var(--dm-nav-bg);
+  --color-dm-nav-border: var(--dm-nav-border);
+
+  /* Pills / Buttons */
+  --color-dm-pill-bg: var(--dm-pill-bg);
+  --color-dm-pill-hover: var(--dm-pill-hover);
+  --color-dm-btn-hover: var(--dm-btn-hover);
+
+  /* Shadows */
+  --shadow-dm-sm: var(--dm-shadow-sm);
+  --shadow-dm-md: var(--dm-shadow-md);
+
+  /* Inputs */
+  --color-dm-input-bg: var(--dm-input-bg);
+
+  /* Text semantic */
+  --color-dm-text-accent: var(--dm-accent);
+  --color-dm-text-success: var(--dm-success);
+  --color-dm-text-warning: var(--dm-warning);
+  --color-dm-text-danger: var(--dm-danger);
+
+  /* Ring utilities */
+  --ring-dm-input-ring: var(--dm-input-ring);
+  --ring-dm-accent: var(--dm-accent);
+
+  /* Hover / Active states */
+  --color-dm-hover: var(--dm-bg-hover);
+  --color-dm-active: var(--dm-accent-bg);
+}
+
 
 html {
   color-scheme: light dark;
 
-  transition:
-    background-color 0.4s ease-in-out,
-    color 0.4s ease-in-out,
-    border-color 0.4s ease-in-out,
+  scroll-behavior: smooth;
+
+  /* transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease, */
 }
 
-* {
+/* * {
   transition:
-    background-color 0.4s ease-in-out,
-    color 0.4s ease-in-out,
-    border-color 0.4s ease-in-out,
-    box-shadow 0.4s ease-in-out;
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+} */
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari */
+}
+
+body {
+  background: var(--dm-bg);
+  color: var(--dm-text-primary);
+  font-family: 'Inter', sans-serif;
 }
 
 
@@ -110,7 +193,7 @@ html {
   /* === Inputs === */
   --dm-input-bg: #0f172a;
   --dm-input-border: #1e3a8a;
-  --dm-input-ring: #38bdf8;   /* cyan-blue glow */
+  --dm-input-ring: #24a3d9;   /* cyan-blue glow */
 
   /* === Navigation === */
   --dm-nav-bg: #0b0b0c;
@@ -121,4 +204,4 @@ html {
   --dm-pill-bg: rgba(59, 130, 246, 0.18);
   --dm-pill-hover: rgba(59, 130, 246, 0.28);
   --dm-btn-hover: #0f235ec9;
-}
+} 

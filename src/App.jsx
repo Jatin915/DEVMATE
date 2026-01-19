@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Dashboard from "../pages/Dashboard.jsx";
+import "./App.css";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -21,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="flex w-screen h-screen overflow-hidden">
+    <div className="flex h-screen overflow-hidden theme-root">
       <Sidebar
         isSidebarOpen={isSidebarOpen}
         setIsSidebarOpen={setIsSidebarOpen}
@@ -39,7 +40,7 @@ function App() {
           isMobile={isMobile}
         />
 
-        <main className="flex-1 h-full overflow-y-auto">
+        <main className="flex-1 scrollbar-hide overflow-y-auto bg-dm-bg">
           <Dashboard isSidebarOpen={isSidebarOpen} isMobile={isMobile} />
         </main>
       </div>
