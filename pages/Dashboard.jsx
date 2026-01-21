@@ -1,7 +1,7 @@
 import React from "react";
 import ProgressCircle from "../src/components/ProgressCircle.jsx";
 
-const Dashboard = ({ isSidebarOpen, isMobile }) => {
+const Dashboard = () => {
   return (
     <div
       className={`

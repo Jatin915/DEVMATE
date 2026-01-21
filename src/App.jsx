@@ -3,6 +3,7 @@ import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Dashboard from "../pages/Dashboard.jsx";
 import "./App.css";
+import Tasks from "../pages/Tasks.jsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -41,7 +42,8 @@ function App() {
         />
 
         <main className="flex-1 scrollbar-hide overflow-y-auto bg-dm-bg">
-          <Dashboard isSidebarOpen={isSidebarOpen} isMobile={isMobile} />
+          {/* <Dashboard /> */}
+          <Tasks />
         </main>
       </div>
     </div>
