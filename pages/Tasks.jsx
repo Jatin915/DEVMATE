@@ -36,7 +36,7 @@ const Tasks = () => {
   return (
     <section className="h-full overflow-y-auto scrollbar-hide px-8 py-6 bg-dm-bg">
       {/* ================= HEADER ================= */}
-      <div className="text-center mb-10">
+      <div className="text-center mb-12">
         <h1 className="text-4xl font-bold text-dm-accent">
           🧩 Learning Tasks
         </h1>
@@ -45,7 +45,7 @@ const Tasks = () => {
         </p>
 
         {/* Progress Bar */}
-        <div className="mt-6 w-1/2 mx-auto h-2 rounded-full bg-dm-bg-tertiary overflow-hidden">
+        <div className="mt-6 w-full sm:w-2/3 lg:w-1/2 mx-auto h-2 rounded-full bg-dm-bg-tertiary overflow-hidden">
           <div
             className="h-2 bg-dm-accent"
             style={{ width: `${progressPercent}%` }}
@@ -58,9 +58,9 @@ const Tasks = () => {
       </div>
 
       {/* ================= MAIN LAYOUT ================= */}
-      <div className="grid grid-cols-12 gap-8">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8">
         {/* ================= TASK LIST ================= */}
-        <div className="col-span-4 bg-dm-card border border-dm-border rounded-xl p-5 shadow-dm-sm">
+        <div className="lg:col-span-4 bg-dm-card border border-dm-border rounded-xl p-5 shadow-dm-sm">
           <h2 className="text-xl font-semibold text-dm-text-primary mb-4">
             📋 Task List
           </h2>
@@ -74,6 +74,7 @@ const Tasks = () => {
                   cursor-pointer px-4 py-3 rounded-lg flex justify-between items-center
                   border
                   transition-transform duration-200
+                  text-sm sm:text-base
                   ${
                     task.completed
                       ? "bg-dm-accent-bg border-dm-accent-border text-dm-accent"
@@ -91,7 +92,7 @@ const Tasks = () => {
         </div>
 
         {/* ================= EDITOR + AI PANEL ================= */}
-        <div className="col-span-8 flex flex-col gap-6">
+        <div className="lg:col-span-8 flex flex-col gap-6">
           {/* Code Editor */}
           <div className="bg-dm-card border border-dm-border rounded-xl p-5 shadow-dm-sm">
             <h2 className="text-lg font-semibold text-dm-text-primary mb-2">
@@ -100,7 +101,7 @@ const Tasks = () => {
             <textarea
               value={code}
               onChange={(e) => setCode(e.target.value)}
-              rows={14}
+              rows={10}
               className="
                 w-full
                 bg-dm-bg-secondary
@@ -117,7 +118,7 @@ const Tasks = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <button
               onClick={handleSubmit}
               className="
