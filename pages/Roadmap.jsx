@@ -23,7 +23,7 @@ const miniProjects = {
     "🖼️ Animated Image Gallery",
     "🌌 Final Project: Modern Landing Page",
   ],
-  JavaScript: [
+  JS: [
     "➕ Counter App",
     "✅ Todo List",
     "🌦️ Weather App (API)",

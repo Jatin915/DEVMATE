@@ -1,7 +1,6 @@
-// src/pages/Playlist.jsx
 import React, { useState } from "react";
 
-const Playlist = () => {
+const Playlists = () => {
   const [playlistUrl, setPlaylistUrl] = useState("");
   const [videos, setVideos] = useState([]);
 
@@ -189,4 +188,4 @@ const Playlist = () => {
   );
 };
 
-export default Playlist;
+export default Playlists;

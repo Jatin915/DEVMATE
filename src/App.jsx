@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+import { Routes, Route} from 'react-router-dom';
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Dashboard from "../pages/Dashboard.jsx";
-import "./App.css";
 import Tasks from "../pages/Tasks.jsx";
+import Roadmap from "../pages/RoadMap.jsx";
+import Playlists from "../pages/Playlists.jsx";
+import Chatbot from "../pages/Chatbot.jsx";
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
@@ -42,8 +45,13 @@ function App() {
         />
 
         <main className="flex-1 scrollbar-hide overflow-y-auto bg-dm-bg">
-          {/* <Dashboard /> */}
-          <Tasks />
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/tasks" element={<Tasks />} />
+            <Route path="/roadmap" element={<Roadmap />} />
+            <Route path="/playlists" element={<Playlists />} />
+            <Route path="/chatbot" element={<Chatbot />} />
+          </Routes>
         </main>
       </div>
     </div>
